@@ -1,0 +1,23 @@
+<html>
+<body>
+
+<h2>sum of two numbers using html text box</h2>
+<form>
+    <label for="i1">first number</label><br>
+    <input type="text" id="first number" name="first integer"><br>
+    <label for="i2">second number</label><br>
+    <input type="text" id="second number" name="second integer"><br>
+    <input type ="button" name="submit" onclick="addnum()" value="submit"
+
+</form>
+<script>
+function addnum(){
+    let first_number=parseInt(document.getElementById("first number").value)
+    let second_number=parseInt(document.getElementById("second number").value)
+    let result = first_number + second_number 
+    document.write(result)
+}
+
+
+
+</script>

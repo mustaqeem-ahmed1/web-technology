@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SIMPLE CALCULATOR</h1>
+    <script>
+        function operation(){
+            let first_number = parseInt(document.getElementById("first number").value)
+            let second_number = parseInt(document.getElementById("second number").value)
+            let op = document.getElementById("op").value
+            switch (op) {
+                case '+':
+                    document.write(first_number+second_number)
+                    break;
+                case '-':
+                    document.write(first_number-second_number)
+                    break;
+                case '*':
+                    document.write(first_number*second_number)
+                    break;
+                case '/':
+                    document.write(first_number/second_number)
+                    break;
+            }
+            
+        }
+    </script>
+    <form>
+        <label for="c1">First number</label><br>
+        <input type="text" id="first number" name="First integer"><br>
+        <label for="c2">Second number</label><br>
+        <input type="text" id="second number" name="second integer"><br>
+        <label for="op">Operator</label><br>
+        <input type="text" id="op" name="Operator"><br>
+        <input type="button" name="SUBMIT" onclick="operation()" value="SUBMIT"> 
+    </form>
+    
+</body>
+</html>
