@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     var arr=[];
+     var size = prompt("Enter the size of the array");
+    for(var i=0;i<size;i++)
+    {
+        arr[i] = prompt("Enter the number"+(i+1));
+    }
+    var item = prompt("Enter the value of the element to be inserted");
+    var position = prompt("Enter the position where the number is to be inserted");
+    if(position>size)
+    {
+        for( i=size;i<position-1;i++){
+            arr[i]=`undefined`;
+        }
+    }
+    arr.splice(position,0,item);
+    alert(arr)
+    </script>
+</body>
+</html>
