@@ -1,0 +1,120 @@
+
+
+
+//
+<html><body><script>
+
+package lab4.prgm.sample;
+import java.io.IOException;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.MapReduceBase;
+import org.apache.hadoop.mapred.Mapper;
+import org.apache.hadoop.mapred.OutputCollector;
+import org.apache.hadoop.mapred.Reporter;
+public class Wcount {
+public static class Map extends MapReduceBase implements Mapper
+<LongWritable, Text, Text, IntWritable>
+{private final static IntWritable one=new IntWritable(1); private
+Text word=new Text();  
+@Override
+public void map(LongWritable key, Text value, OutputCollector
+<Text, IntWritable> output, Reporter args3) throws IOException {
+String line =value.toString();        //<1,”hello goodbye”>
+StringTokenizer tokenizer=new StringTokenizer(line);  
+while(tokenizer.hasMoreTokens())
+ { word.set(tokenizer.nextToken());
+    output.collect(word,one);  } } }
+public static class Reduce extends MapReduceBase implements Reducer
+<Text, IntWritable, Text, IntWritable>{
+ @Override
+public void reduce(Text key, Iterator<IntWritable> value, OutputCollector
+<Text, IntWritable> output, Reporter args3) throws IOException {
+ int sum=0;
+ while(value hasNext())
+  { sum+=value.next().get(); }
+  output.collect(key,new IntWritable(sum)); } }
+ public static void main(String[] args) throws IOException {
+JobConf conf = new JobConf(Wcount.class);
+conf.setJobName(“wordcount”);
+conf.setOutputKeyClass(Text.class);
+conf.setOutputValueClass(IntWritable.class);
+conf.setMapperClass(Map.class);
+conf.setCombinerClass(Reduce.class);
+conf.setReducerClass(Reduce.class);
+conf.setInputFormat(TextInputFormat.class);S
+conf.setOutputFormat(TextInputFormat.class);
+FileInputFormat.setInputPaths(conf, new Path(args[0]));
+FileInputFormat.setInputPaths(conf, new Path(args[1]));
+JobClient.runJob(conf); } }
+
+
+
+Steps for prog 3:
+In eclipse
+Select file, java project, project name- lab4 [Next],[Finish]
+Open lab4 I.e project(in right side)
+rightclick src, new, package, name it as- lab4.prgm.sample
+ (must be 3 level), Finish
+Right click on lab4.prgm.sample I.e new package ()can be seen
+ in left side under src ,new,class,name- Wcount, select/check
+ box saying public static void main(String[] args),finish
+Goto lab4, right click build path, configure build path
+Select libraries in top row, rightside button select add external Jars
+Goto this address hadoop(also called home)->hadoop-3.2.1->share
+->hadoop->common->hadoop-common-3.2.1
+Next map reduce. So again click add external Jars, goto address
+ hadoop(also called home)->hadoop-3.2.1->share->hadoop->
+mapreduce->hadoop-mapreduce-client-core-3.2.1.jar
+
+After code is written
+Select project(right click), export, click Java,JAR File,[Next]
+Make sure project is selected I.e lab4. Also address keep it as
+ Desktop/directory name- anki1.jar(folder name), click [Next] 
+again click [Next] in Main class - click [browse] , 
+click Wcount(in top) , [Finish]
+
+In browser
+Open- localhost:9870
+Click utilities(in green heading)
+Open Terminal
+cd $HADOOP_HOME/sbin
+$./start-all.sh
+$jps
+Should have secondary, name node, node manager,jps etc. 
+all these nodes should be running if not ask teacher.
+$hdfs dfs -mkdir -p /a1 (use a db that isn’t there in frontend)
+    (Reload and check it should be there, name will be last column)
+$gedit pra.txt (have to open a file)
+Enter data in the file, save and close. This is saved in local directory.
+$ls
+Check for the file pro.txt , if its there or not. Mostly will be there.
+$hdfs dfs -copyFromLocal pra.txt /a1
+Open browser in search bar type-   /a1 (then enter),
+reload it and open and see a block should be allotted
+In terminal
+$Cd ..        (because need to come to home directory)
+$cd Desktop/
+$ls
+Check for .jar file
+$pwd (click enter it must show this- /home/hadoop/Desktop)
+$hadoop jar /home/hadoop/Desktop/anki1.jar /a1 /a2 
+(check in browser search bar that a2 directory isn’t there, else error)
+In browser search bar- /a2 (2 may be there 1st one shows success, 
+open 2nd one, there next to download there is- Head the file, click that)
+You will have the answer.
+
+OR IN TERMINAL
+$ cd $HADOOP_HOME/sbin
+$./start-all.sh
+$jps
+$hdfs dfs -mkdir -p /hello(input directory name)
+$gedit tata.txt (enetred text as- hi how are you)
+$hdfs dfs -copyFromLocal tata.txt /hello
+$hadoop jar /home/hadoop/Desktop/hello/hello1
+(to get this address go to desktop,select file(properties)
+copy the path and paste)
+$hdfs dfs -cat /hello1/part*
+
+</script></body></html>
