@@ -1,0 +1,103 @@
+
+prog 2:
+
+1. To Print the Hadoop Running processes (JAVA Processes)
+$ jps
+2. To check the health of the HDFS le system - fsck
+$ hdfs fsck / # / - Hadoop Root directory
+3. The general format of the HDFS command is as follows,
+$ hdfs fs -command_name
+# hdfs - file system
+# dfs/fs - referring the file system command
+4. To list all the les in HDFS directory (/)
+$ hdfs dfs -ls / # Lists all the files in the Hadoop root directory
+5. To Make a directory in HDFS
+$ hdfs dfs -mkdir /directory_name
+6. To create an empty le in HDFS directory
+$ hdfs dfs -touchz filename
+7. To check the size of the le - du
+$ hdfs dfs -du -s file_name
+# du - data units
+# s - size of data units
+8. To add the content to the existing le - appendToFile
+$ hdfs dfs -appendToFile - filename
+# press ctrl+D to exit
+9. To display contents of the le present in the hdfs - cat
+$ hdfs dfs -cat file_name
+10. To copy a le from the local lesystem to HDFS- copyFromLocal/(-put)
+$hdfs dfs -copyFromLocal local_file hdfs_directory
+$hdfs dfs -put local_file hdfs_directory
+11. To copy a le from HDFS to local lesystem - copyToLocal/(-get)
+$ hdfs dfs -copyToLocal hdfs_local_file local_path_file
+$ hdfs dfs -get hdfs_local_file local_path_file
+12. Copying within the same HDFS le system
+$ hdfs dfs -cp hdfs_local_file_path hdfs_second_local_path
+13. To move a le within the HDFS le system/ used for renaming too
+$ hdfs dfs -mv local_filesystem_file new_local_file_path
+14. rm - remove command - remove the les o
+$ hdfs dfs -rm hdfs_file_name
+15. rm -rf - remove forcefully - remove directories
+$ hdfs dfs -rm -r hdfs_directory
+16. To get help - usage command - provides help for commands
+$ hdfs dfs usage command_name
+$ hdfs dfs -help # shows all the commands in hdfs
+
+own
+
+Command to start Hadoop
+1. ./start-all.sh
+2. jps {To check whether all daemon processes are running)
+
+1. Listing files and Directories using ls command
+$ hadoop fs -ls
+2. Creating Directory using mkdir command
+$hadoop fs -mkdir prog2
+$hadoop fs -ls (to check)
+3. Create an empty file using touchz command
+$hadoop  fs -touchz empty.txt
+$hadoop fs -ls (to check)
+4. To copy files/folders from local file system to hdfs store using 
+copyFromLocal or put command
+$hadoop fs -copyFromLocal f1.txt  prog2/f1.txt
+$hadoop fs -ls prog2/
+5. To print the content of the file using cat command
+$hadoop fs -cat prog2/f1.txt
+hello
+for new line- ctrl+c
+6. To copy files/folders from hdfs store to
+ local file system using copyToLocal 
+$hadoop fs -copyFromLocal prog2/
+$ls (to check)
+$ cd prog2/
+$ls (to check)
+7. moveFromLocal: This command
+will move file from local to hdfs
+$hadoop fs -moveFRomLocal prog2 prog3
+$hadoop fs -ls (to check)
+$ls
+8. cp: This command is used to copy files within hdfs
+$hadoop fs -cp prog2/f1.txt prog3/f1_copy.txt
+$hadoop fs -cat prog3/f1_copy.txt
+hello 
+for new line- ctrl+c
+9. mv: This command is used to
+move files within hdfs.
+$hadoop  fs -mv prog3/f1_copy.txt prog2/
+$hadoop fs -ls prog2/  (to check if moved)
+10. rmr: This command deletes a file from HDFS
+recursively. It is very useful command when you want
+to delete a non-empty directory.
+$hadoop fs -ls
+$hadoop fs -rm -r prog3/
+11. du: It will give the size of each
+file in directory.
+$hadoop fs -du prog2/ 
+12. dus: This command will give the total size of directory/file.
+$hadoop fs -dus prog2/
+13. stat: It will give the last modified time of directory 
+or path. In short it will give stats of the directory or file.
+$hadoop fs -stat prog2
+14. AppendToFile
+$hadoop fs -appendToFile f1.txt f2.txt new.txt
+$hadoop fs -cat new.txt
+hello (for new line- ctrl+c)
