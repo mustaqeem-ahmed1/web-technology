@@ -1,0 +1,38 @@
+PRIMARY KEYS
+
+E1;
+BOOK(Book_id)
+BOOK_AUTHORS(Book_id)
+PUBLISHER(Name)
+BOOK_COPIES(Book_id, Branch_id)
+BOOK_LENDING(Book_id, Branch_id, Card_No)
+LIBRARY_BRANCH(Branch_id)
+
+
+E2;
+SALESMAN(Salesman_id)
+CUSTOMER(Customer_id)
+ORDERS(Ord_No)
+
+
+E3;
+ACTOR(Act_id)
+DIRECTOR(Dir_id)
+MOVIES(Mov_id)
+MOVIE_CAST(Act_id, Mov_id)
+RATING(Mov_id)
+
+E4;
+STUDENT(USN)
+SEMSEC(SSID)
+CLASS(USN)
+SUBJECT(Subcode)
+IAMARKS(USN, Subcode, SSID)
+
+
+E5:
+EMPLOYEE(SSN)
+DEPARTMENT(DNo)
+DLOCATION(DNo,DLoc)
+PROJECT(PNo)
+WORKS_ON(SSN, PNo)
