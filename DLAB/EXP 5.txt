@@ -1,6 +1,0 @@
-
-main one:
-https://github.com/ksitbbb/g/blob/master/company.sql
-
-extra one; table coloumn name r diff:
-https://github.com/AbhishekMali21/DBMS-LABORATORY/blob/master/5.%20COMPANY%20DATABASE.sql
