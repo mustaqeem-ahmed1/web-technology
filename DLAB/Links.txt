@@ -1,0 +1,34 @@
+E1;
+1,2,5:
+https://github.com/ksitbbb/g/blob/master/library.sql
+3,4:
+https://github.com/AbhishekMali21/DBMS-LABORATORY/blob/master/1.%20LIBRARY%20DATABASE.sql
+
+
+
+E2;
+https://github.com/ksitbbb/g/blob/master/Orders.txt
+
+
+
+
+E3;
+https://github.com/ksitbbb/g/blob/master/Movies.sql
+
+
+
+
+E4; DIDNT GET CORRECT 4TH ONE.
+1,3,5:
+https://github.com/AbhishekMali21/DBMS-LABORATORY/blob/master/4.%20COLLEGE%20DATABASE.sql
+2:
+https://www.vtuloop.com/vtu-dbms-lab-college-database/
+
+
+
+E5- DIDNT TRY
+main one:
+https://github.com/ksitbbb/g/blob/master/company.sql
+
+extra one; table coloumn name r diff:
+https://github.com/AbhishekMali21/DBMS-LABORATORY/blob/master/5.%20COMPANY%20DATABASE.sql
