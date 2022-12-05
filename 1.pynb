@@ -1,0 +1,77 @@
+import math
+     
+
+arr = [115.3,195.5,120.5,110.2,90.4,105.6,110.9,116.3,122.3,125.4]
+_sum = sum(arr)
+mean=_sum/10
+print("Mean -- ",mean)
+     
+Mean --  121.24000000000001
+
+arr.sort()
+med = len(arr)//2
+median = (arr[med]+arr[med+1])/2
+median = (arr[med]+arr[med+1])/2
+print("Median -- ",median) 
+     
+Median --  118.4
+
+count = 1
+m=0
+diff=0.0
+var=0.0
+mod=0.0
+for i in range(0,10):
+  for j in range(i+1,10):
+    if arr[i]==arr[j]:
+      count = count+1
+  if count>m:
+    m=count
+    mod = arr[i]
+if m==1:
+  print("NO Mode")
+else:
+  print("Mode -- ",mod)
+for i in arr:
+  diff = i-mean
+  var=var+(diff**2)
+print("Variance -- ",var)
+     
+NO Mode
+Variance --  7017.724
+
+sd = math.sqrt(var)
+print("Standard Deviation -- ",sd)
+diff = arr[9]-arr[0]
+print("Min Max normalization")
+for ii in arr:
+  y=(i-arr[0])/diff
+  print(y)
+print("Standardization")
+for i in arr:
+  stn = (i-mean)/sd
+  print(stn)
+     
+Standard Deviation --  83.7718568494217
+Min Max normalization
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+Standardization
+-0.3681427290722982
+-0.1866975448343304
+-0.1317865022359979
+-0.12343047401451247
+-0.07090686805089026
+-0.05896968487733974
+-0.008833515548427498
+0.012653414163963414
+0.04965868200197015
+0.8864552224678619
