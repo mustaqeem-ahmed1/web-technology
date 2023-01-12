@@ -1,0 +1,96 @@
+Main.dart
+
+import 'package:flutter/material.dart';
+import 'package:audioplayers/src/audio_cache.dart';
+
+void PlayAudio(int i){
+  final player = AudioCache();
+  player.play("assets_note$i.wav");
+}
+
+void main() {
+  runApp(
+     MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("XYLOPHONE !"),centerTitle: true,),
+        body: Xylopage(),
+      ),
+    )
+
+  );
+}
+class Xylopage extends StatefulWidget {
+  const Xylopage({Key? key}) : super(key: key);
+  @override
+  _XyloPageState createState() => _XyloPageState();
+}
+class _XyloPageState extends State<Xylopage> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch, // Setting the column to occupy full screen width horizontally
+    children: [
+    Expanded(child: TextButton(
+    style: TextButton.styleFrom(
+    backgroundColor: Colors.orange
+    ),
+    onPressed: (){
+    PlayAudio(1);
+    }, child: const Text('First'),
+    ),),
+
+    Expanded(child: TextButton(
+    style: TextButton.styleFrom(
+    backgroundColor: Colors.deepOrangeAccent
+    ),
+    onPressed: (){
+    PlayAudio(2);
+    }, child: const Text('Second'),),),
+
+      Expanded(child: TextButton(
+        style: TextButton.styleFrom(
+            backgroundColor: Colors.deepOrange
+        ),
+        onPressed: (){
+          PlayAudio(3);
+        }, child: const Text('Third'),),),
+
+      Expanded(child: TextButton(
+        style: TextButton.styleFrom(
+            backgroundColor: Colors.white
+        ),
+        onPressed: (){
+          PlayAudio(4);
+        }, child: const Text('Fourth'),),),
+
+      Expanded(child: TextButton(
+        style: TextButton.styleFrom(
+            backgroundColor: Colors.white70
+        ),
+        onPressed: (){
+          PlayAudio(5);
+        }, child: const Text('Fifth'),),),
+
+      Expanded(child: TextButton(
+        style: TextButton.styleFrom(
+            backgroundColor: Colors.green
+        ),
+        onPressed: (){
+          PlayAudio(6);
+        }, child: const Text('Sixth'),),),
+
+      Expanded(child: TextButton(
+        style: TextButton.styleFrom(
+            backgroundColor: Colors.green
+        ),
+        onPressed: (){
+          PlayAudio(7);
+        }, child: const Text('Seventh'),),)
+    ]);
+
+
+
+     // Build the Widget Tree here
+  }
+}
+

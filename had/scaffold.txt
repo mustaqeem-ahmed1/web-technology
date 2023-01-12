@@ -1,0 +1,55 @@
+Without safe area – Main.dart
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+void main() {
+runApp(MaterialApp(
+home: Text('Without SafeArea-sooraj',
+textAlign: TextAlign.center,
+style: TextStyle(
+fontSize: 40.0,
+fontWeight: FontWeight.w800,
+color: Colors.deepOrangeAccent,
+),
+)
+));
+}
+
+
+WithsafeArea- Main.dart
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+void main() {
+runApp(MaterialApp(
+home: SafeArea(child:Text('with safeArea-sooraj',
+textAlign: TextAlign.center,
+style: TextStyle(
+fontSize: 40.0,
+fontWeight: FontWeight.w800,
+color: Colors.deepOrangeAccent,
+),
+),
+)
+));
+}
+
+
+Scaffold-Area
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+void main() {
+runApp(MaterialApp(
+home: Scaffold(
+appBar: AppBar(
+title: Text('Scaffold-safeArea'
+),
+),
+body: Container(
+child: Center(
+child:Text(
+'Hai im sooraj'
+),
+),
+),
+)
+));
+}
