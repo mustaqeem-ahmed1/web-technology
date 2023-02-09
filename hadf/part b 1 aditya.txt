@@ -1,0 +1,97 @@
+
+Q.scaffold with safe area
+// import 'dart:math';
+// import 'package:flutter/material.dart'
+// void main() => runApp(
+//   MaterialApp(
+//     home:Scaffold(
+//       appBar: AppBar(
+//         title: Text("My second app"),
+//       ),
+//       body: Container(
+//         child: SafeArea(
+//           child: Center(
+//             child: Text("This is Body"),
+//           ),
+//         ),
+//       ),
+//     )
+//   )
+// );
+
+
+mutil child  (if asked coloumn replace main axis with cross axis)
+ / import 'package:flutter/material.dart';
+// import 'dart:math';
+// import 'package:audioplayers/src/audio_cache.dart';
+
+// void main()=> runApp(
+//   MaterialApp(
+//     home: Scaffold(
+//       appBar: AppBar(
+//         title: Text("3rd app"),
+//       ),
+//       body: Row(
+
+//        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//         children: [
+//         FirstChild(),
+//         SecondChild(),
+//         ThirdChild(),
+//       ]),
+//     )
+//   )
+// );
+ // class FirstChild extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context){
+//     return Container(
+//       width: 100,
+//       height: 100,
+//       color: Colors.red,
+//     );
+//   }
+// }
+// class SecondChild extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context){
+//     return Container(
+//       width: 100,
+//       height: 100,
+//       color: Colors.blue,
+//     );
+//   }
+// }
+// class ThirdChild extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context){
+//     return Container(
+//       width: 100,
+//       height: 100,
+//        color: Colors.green,
+
+//     );
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
